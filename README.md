@@ -72,7 +72,7 @@ Press the Save button.
 
 Add a New App Component with Type Plugin
 
-IFrame URL: <ngrok url>/hs_stream_demo.html
+IFrame URL: <ngrok url>/hs_plugin_demo.html
 Icon URL: <ngrok url>/asset/icon.png
 
 Add a New App Component with Type Content Source

@@ -3,6 +3,8 @@ $(document).ready(function() {
         useTheme: true
     });
 
+    console.log("my log message");
+
     $('._message_send').click(function(){
         hsp.composeMessage($('._message_text').val());
     });
@@ -61,8 +63,8 @@ $(document).ready(function() {
     });
 
     $('._showImagePreview').click(function(){
-        hsp.showImagePreview( 
-            'http://www.adweek.com/files/imagecache/node-blog/blogs/hootsuite-owl-holidays-hed-2014.jpg', 
+        hsp.showImagePreview(
+            'http://www.adweek.com/files/imagecache/node-blog/blogs/hootsuite-owl-holidays-hed-2014.jpg',
             'http://ow.ly/G4OlN');
     });
 
@@ -105,7 +107,7 @@ $(document).ready(function() {
         } else {
             avatar = 'http://avatars.io/facebook/' + userid;
         }
-        
+
 
         $('.hs_topBar').after(messageTemplate({
             input: message.post.content.body,
@@ -221,8 +223,3 @@ $(document).ready(function() {
             '</div>' +
         '</div>');
 });
-
-
-
-
-

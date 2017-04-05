@@ -1,2 +1,2 @@
-publicHostname = 'https://4eb9b80f.ngrok.io';
+publicHostname = 'https://8b5309ff.ngrok.io';
 hsSecret = 'hsdemosharedsecret';
