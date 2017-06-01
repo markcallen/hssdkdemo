@@ -51,6 +51,8 @@ Edit assets/js/vars.js and set the publicHostname to the ngork url
 
 ## Configure
 
+### Create New App
+
 Go to Hootsuite Developer portal https://hootsuite.com/developers/my-apps
 
 Create a New App, set the name and description and press Create.
@@ -60,25 +62,31 @@ Click on the new App link.  Click the Edit button.
 Set the Authentication Type to Single Sign On and set the shared secret to:
 hsdemosharedsecret and press Save.
 
+### Add Stream
+
 Click New App Component.  Select App Component Type of Stream, set the App Component
 Title and press Add.
 
 For the new stream App Component click on the Edit button and set
 
-IFrame URL: <ngrok url>/hs_stream_demo.html
-Icon URL: <ngrok url>/asset/icon.png
+> IFrame URL: {{ngrok url}}/hs_stream_demo.html
+> Icon URL: {{ngrok url}}/asset/icon.png
 
 Press the Save button.
 
+### Add Plugin
+
 Add a New App Component with Type Plugin
 
-IFrame URL: <ngrok url>/hs_plugin_demo.html
-Icon URL: <ngrok url>/asset/icon.png
+> IFrame URL: {{ngrok url}}/hs_plugin_demo.html
+> Icon URL: {{ngrok url}}/asset/icon.png
+
+### Add Content Source
 
 Add a New App Component with Type Content Source
 
-IFrame URL: <ngrok url>/content_source_demo.html
-Icon URL: <ngrok url>/asset/icon.png
+> IFrame URL: {{ngrok url}}/content_source_demo.html  
+> Icon URL: {{ngrok url}}/asset/icon.png
 
 ## Add the App to Hootsuite
 
