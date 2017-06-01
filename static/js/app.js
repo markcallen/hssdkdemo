@@ -3,8 +3,6 @@ $(document).ready(function() {
         useTheme: true
     });
 
-    console.log("my log message");
-
     $('._message_send').click(function(){
         hsp.composeMessage($('._message_text').val());
     });
@@ -163,10 +161,10 @@ $(document).ready(function() {
     $(document).on('click', '._assign', function() {
         var $messageBox = $(this).closest('._messageBox');
         var params = {
-            messageId: $messageBox.attr('messageId'),
-            message: $messageBox.find('._content').text(),
-            messageAuthor: $messageBox.find('._username').text(),
-            messageAuthorAvatar: $messageBox.find('.hs_avatarImage').attr('src')
+            messageId: "545327211298185217",
+            message: "@Adweek: Hootsuite's holiday video is 40 minutes of an owl perched by a roaring fire. http://t.co/lVi4fKhX3v http://t.co/kZ44Lxsd8P",
+            messageAuthor: "David Chan",
+            messageAuthorAvatar: "https://d1cmhiswqj5a7e.cloudfront.net/http%3A%2F%2Fplacehold.it%2F30x30%2F444"
         };
 
         $messageBox.addClass('_message_' + params.messageId);
