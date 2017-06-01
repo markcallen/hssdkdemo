@@ -1,55 +1,38 @@
 # HS SDK Demo
 
-## Start nginx
+## Start docker-compose
 
 ```sh
-docker run --name hs-demo-nginx \
-   -v $PWD/static:/usr/share/nginx/html:ro \
-   -v $PWD/conf.d:/etc/nginx/conf.d:ro \
-   -p 80 \
-   -p 443 \
-   -d nginx
+docker-compose up
 ````
 
-Verify by going to
+Verify nginx:
 
 ```sh
-open http://$(docker port hs-demo-nginx 80)/hs_stream_demo.html
+open http://$(docker port hssdkdemo_nginx_1 80)/hs_stream_demo.html
 ````
 
-## Create the tunnel
-
-This is required for the content source demo as Hootsuite needs to verify access
-the image to be loaded into ow.ly
+Get the ngrok URL:
 
 ```sh
-docker run --name hs-demo-ngrok \
-    -p 4040 \
-    --link hs-demo-nginx:http \
-    -d wernight/ngrok ngrok http hs-demo-nginx:80
+curl -Ls $(docker port hssdkdemo_ngrok_1 4040)/api/tunnels/command_line | python -c 'import sys, json; print json.load(sys.stdin)["public_url"]'
 ````
 
-Get the ngrok URL
-
-```sh
-curl -Ls $(docker port hs-demo-ngrok 4040)/api/tunnels/command_line | python -c 'import sys, json; print json.load(sys.stdin)["public_url"]'
-````
-
-Verify:
+Verify ngrok:
 
 ````
-open $(curl -Ls $(docker port hs-demo-ngrok 4040)/api/tunnels/command_line | python -c 'import sys, json; print json.load(sys.stdin)["public_url"]')/hs_stream_demo.html
+open $(curl -Ls $(docker port hssdkdemo_ngrok_1 4040)/api/tunnels/command_line | python -c 'import sys, json; print json.load(sys.stdin)["public_url"]')/hs_stream_demo.html
 ````
 
-View the traffic
+View the traffic:
 
 ````
-open http://$(docker port hs-demo-ngrok 4040)
+open http://$(docker port hssdkdemo_ngrok_1 4040)
 ````
-
-Edit assets/js/vars.js and set the publicHostname to the ngork url
 
 ## Configure
+
+Edit assets/js/vars.js and set the publicHostname to the ngork url
 
 ### Create New App
 

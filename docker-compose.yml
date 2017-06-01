@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+  ngrok:
+    image: wernight/ngrok
+    links: 
+      - nginx:80
+    command: ngrok http nginx:80
+    ports:
+      - "4040"
+
+  nginx:
+    image: nginx
+    volumes: 
+      - ./static:/usr/share/nginx/html:ro
+      - ./conf.d:/etc/nginx/conf.d:ro
+    ports:
+      - "80"
+      - "443"
+
